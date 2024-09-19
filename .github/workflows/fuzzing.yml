@@ -14,5 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Initialize image name
+      run: ./name.sh
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: ./build.sh
+    - name: Run the fuzz test
+      run: ./run.sh
