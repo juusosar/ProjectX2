@@ -16,7 +16,8 @@ jobs:
     - uses: actions/checkout@v4
     - name: Initialize image name
       run: ./name.sh
-    - name: Build the Docker image
-      run: ./build.sh
-    - name: Run the fuzz test
-      run: ./run.sh
+    - name: Build and run the Docker image
+      run: |
+        ./build.sh
+        ./run.sh
+
